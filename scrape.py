@@ -103,8 +103,6 @@ def scrape_pff_data():
             )  # should be 1,22 for all possible games including playoffs
             stat_nums = range(1, 19)  # should be 1,20 to include special teams
 
-            df = pd.DataFrame(games_dict)
-            df.to_csv("team_data.csv")
             for row in row_nums:
                 try:
                     # if away = '@', the current team is away. if empty, the current team is home
