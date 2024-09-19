@@ -21,7 +21,17 @@ def extract_ou_line(over_under):
 
 # Apply the functions to create the 'total' and 'ou_line' columns
 df['total'] = df['Over/Under'].apply(set_total)
+# Replace NaN values in the 'total' column with 2
+df['total'].fillna(2, inplace=True)
+
+# Count the number of 2 values in the 'total' column
+count_twos = (df['total'] == 2).sum()
+print(f"Number of '2' values in the 'total' column: {count_twos}") # This is the amount of pushes
+
+
 df['ou_line'] = df['Over/Under'].apply(extract_ou_line)
+
+df.drop(columns=['Over/Under'], inplace=True)  # Drop the original column
 
 # Display the first few rows to verify the new columns
 print(df.head())
