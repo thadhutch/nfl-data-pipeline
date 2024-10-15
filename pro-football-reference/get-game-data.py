@@ -8,8 +8,8 @@ import time
 import csv
 
 # Path to the boxscores URLs file
-boxscores_file_path = "2024_boxscore_urls.txt"
-csv_file_path = "2024_regular_game_data.csv"
+boxscores_file_path = "2024_wk6_urls.txt"
+csv_file_path = "2024_wk6_game_data.csv"
 
 # Path to your WebDriver (update this if necessary)
 webdriver_path = "/path/to/chromedriver"

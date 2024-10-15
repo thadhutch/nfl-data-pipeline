@@ -1,5 +1,14 @@
+import os
+import sys
 import pandas as pd
-from teams import encoded_teams  # Import the encoded teams dictionary
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+parent_dir = os.path.abspath(os.path.join(current_dir, '../../'))
+sys.path.insert(0, parent_dir)
+
+from pro_football_focus.teams import encoded_teams
+
+
 
 # Load the dataset
 df = pd.read_csv('data/pff/dates_team_data.csv')  # Update with the actual path to your dataset

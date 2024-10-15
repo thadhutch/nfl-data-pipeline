@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Path to the dataset
-input_path = 'data/over-under/v1-dataset-modified.csv'
+input_path = 'data/over-under/data-w-averages.csv'
 output_path = 'data/over-under/v1-dataset-gp.csv'  # You can change this as needed
 
 # Read the CSV file

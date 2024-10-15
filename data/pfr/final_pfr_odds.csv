@@ -2318,3 +2318,95 @@ Title,Roof,Surface,Vegas Line,Over/Under,Formatted Date,away_team,home_team
 "Los Angeles Rams at San Francisco 49ers - January 7th, 2024",outdoors,grass,San Francisco 49ers -4.0,41.0 (push),01/07/2024,Los Angeles Rams,San Francisco 49ers
 "Dallas Cowboys at Washington Commanders - January 7th, 2024",outdoors,grass,Dallas Cowboys -13.0,46.5 (over),01/07/2024,Dallas Cowboys,Washington Commanders
 "Buffalo Bills at Miami Dolphins - January 7th, 2024",outdoors,grass,Buffalo Bills -2.5,48.0 (under),01/07/2024,Buffalo Bills,Miami Dolphins
+"Baltimore Ravens at Kansas City Chiefs - September 5th, 2024",outdoors,grass,Kansas City Chiefs -3.0,47.0 (push),09/05/2024,Baltimore Ravens,Kansas City Chiefs
+"Green Bay Packers at Philadelphia Eagles - September 6th, 2024",,,Philadelphia Eagles -2.0,49.5 (over),09/06/2024,Green Bay Packers,Philadelphia Eagles
+"Pittsburgh Steelers at Atlanta Falcons - September 8th, 2024",retractable roof (closed),fieldturf,Atlanta Falcons -3.5,42.0 (under),09/08/2024,Pittsburgh Steelers,Atlanta Falcons
+"Arizona Cardinals at Buffalo Bills - September 8th, 2024",outdoors,a_turf,Buffalo Bills -6.5,46.5 (over),09/08/2024,Arizona Cardinals,Buffalo Bills
+"Tennessee Titans at Chicago Bears - September 8th, 2024",outdoors,grass,Chicago Bears -3.5,44.5 (under),09/08/2024,Tennessee Titans,Chicago Bears
+"New England Patriots at Cincinnati Bengals - September 8th, 2024",outdoors,fieldturf,Cincinnati Bengals -7.5,41.0 (under),09/08/2024,New England Patriots,Cincinnati Bengals
+"Houston Texans at Indianapolis Colts - September 8th, 2024",retractable roof (open),fieldturf,Houston Texans -2.5,48.5 (over),09/08/2024,Houston Texans,Indianapolis Colts
+"Jacksonville Jaguars at Miami Dolphins - September 8th, 2024",outdoors,grass,Miami Dolphins -3.5,49.5 (under),09/08/2024,Jacksonville Jaguars,Miami Dolphins
+"Carolina Panthers at New Orleans Saints - September 8th, 2024",dome,sportturf,New Orleans Saints -4.0,41.5 (over),09/08/2024,Carolina Panthers,New Orleans Saints
+"Minnesota Vikings at New York Giants - September 8th, 2024",outdoors,fieldturf,Minnesota Vikings -1.5,41.0 (under),09/08/2024,Minnesota Vikings,New York Giants
+"Las Vegas Raiders at Los Angeles Chargers - September 8th, 2024",dome,matrixturf,Los Angeles Chargers -3.0,40.0 (under),09/08/2024,Las Vegas Raiders,Los Angeles Chargers
+"Denver Broncos at Seattle Seahawks - September 8th, 2024",outdoors,fieldturf,Seattle Seahawks -6.0,42.0 (over),09/08/2024,Denver Broncos,Seattle Seahawks
+"Dallas Cowboys at Cleveland Browns - September 8th, 2024",outdoors,grass,Cleveland Browns -2.5,41.0 (over),09/08/2024,Dallas Cowboys,Cleveland Browns
+"Washington Commanders at Tampa Bay Buccaneers - September 8th, 2024",outdoors,grass,Tampa Bay Buccaneers -3.5,42.5 (over),09/08/2024,Washington Commanders,Tampa Bay Buccaneers
+"Los Angeles Rams at Detroit Lions - September 8th, 2024",dome,fieldturf,Detroit Lions -4.5,52.5 (under),09/08/2024,Los Angeles Rams,Detroit Lions
+"New York Jets at San Francisco 49ers - September 9th, 2024",outdoors,grass,San Francisco 49ers -4.0,43.5 (over),09/09/2024,New York Jets,San Francisco 49ers
+"Buffalo Bills at Miami Dolphins - September 12th, 2024",outdoors,grass,Miami Dolphins -2.0,49.0 (under),09/12/2024,Buffalo Bills,Miami Dolphins
+"Los Angeles Chargers at Carolina Panthers - September 15th, 2024",outdoors,grass,Los Angeles Chargers -5.0,38.5 (under),09/15/2024,Los Angeles Chargers,Carolina Panthers
+"New Orleans Saints at Dallas Cowboys - September 15th, 2024",retractable roof (closed),matrixturf,Dallas Cowboys -6.0,46.5 (over),09/15/2024,New Orleans Saints,Dallas Cowboys
+"Tampa Bay Buccaneers at Detroit Lions - September 15th, 2024",dome,fieldturf,Detroit Lions -7.5,51.5 (under),09/15/2024,Tampa Bay Buccaneers,Detroit Lions
+"Indianapolis Colts at Green Bay Packers - September 15th, 2024",outdoors,grass,Indianapolis Colts -2.5,40.5 (under),09/15/2024,Indianapolis Colts,Green Bay Packers
+"Cleveland Browns at Jacksonville Jaguars - September 15th, 2024",outdoors,grass,Jacksonville Jaguars -3.0,41.0 (under),09/15/2024,Cleveland Browns,Jacksonville Jaguars
+"San Francisco 49ers at Minnesota Vikings - September 15th, 2024",dome,sportturf,San Francisco 49ers -4.5,46.0 (under),09/15/2024,San Francisco 49ers,Minnesota Vikings
+"Seattle Seahawks at New England Patriots - September 15th, 2024",outdoors,fieldturf,Seattle Seahawks -3.0,38.0 (over),09/15/2024,Seattle Seahawks,New England Patriots
+"New York Jets at Tennessee Titans - September 15th, 2024",outdoors,grass,New York Jets -3.5,41.0 (push),09/15/2024,New York Jets,Tennessee Titans
+"Las Vegas Raiders at Baltimore Ravens - September 15th, 2024",outdoors,grass,Baltimore Ravens -9.0,41.5 (over),09/15/2024,Las Vegas Raiders,Baltimore Ravens
+"New York Giants at Washington Commanders - September 15th, 2024",outdoors,grass,Washington Commanders -1.0,43.0 (under),09/15/2024,New York Giants,Washington Commanders
+"Los Angeles Rams at Arizona Cardinals - September 15th, 2024",retractable roof (closed),grass,Pick,47.5 (over),09/15/2024,Los Angeles Rams,Arizona Cardinals
+"Pittsburgh Steelers at Denver Broncos - September 15th, 2024",outdoors,grass,Pittsburgh Steelers -2.5,36.5 (under),09/15/2024,Pittsburgh Steelers,Denver Broncos
+"Cincinnati Bengals at Kansas City Chiefs - September 15th, 2024",outdoors,grass,Kansas City Chiefs -6.0,48.0 (over),09/15/2024,Cincinnati Bengals,Kansas City Chiefs
+"Chicago Bears at Houston Texans - September 15th, 2024",retractable roof (open),astroturf,Houston Texans -6.0,45.0 (under),09/15/2024,Chicago Bears,Houston Texans
+"Atlanta Falcons at Philadelphia Eagles - September 16th, 2024",outdoors,grass,Philadelphia Eagles -5.5,45.5 (under),09/16/2024,Atlanta Falcons,Philadelphia Eagles
+"New England Patriots at New York Jets - September 19th, 2024",outdoors,fieldturf,New York Jets -6.0,38.5 (under),09/19/2024,New England Patriots,New York Jets
+"New York Giants at Cleveland Browns - September 22nd, 2024",outdoors,grass,Cleveland Browns -6.5,38.5 (under),09/22/2024,New York Giants,Cleveland Browns
+"Chicago Bears at Indianapolis Colts - September 22nd, 2024",retractable roof (closed),fieldturf,Indianapolis Colts -1.0,43.5 (under),09/22/2024,Chicago Bears,Indianapolis Colts
+"Houston Texans at Minnesota Vikings - September 22nd, 2024",dome,sportturf,Houston Texans -1.0,46.5 (under),09/22/2024,Houston Texans,Minnesota Vikings
+"Philadelphia Eagles at New Orleans Saints - September 22nd, 2024",dome,sportturf,New Orleans Saints -2.5,49.5 (under),09/22/2024,Philadelphia Eagles,New Orleans Saints
+"Green Bay Packers at Tennessee Titans - September 22nd, 2024",outdoors,grass,Tennessee Titans -3.0,37.5 (over),09/22/2024,Green Bay Packers,Tennessee Titans
+"Los Angeles Chargers at Pittsburgh Steelers - September 22nd, 2024",outdoors,grass,Pittsburgh Steelers -1.0,34.5 (under),09/22/2024,Los Angeles Chargers,Pittsburgh Steelers
+"Denver Broncos at Tampa Bay Buccaneers - September 22nd, 2024",outdoors,grass,Tampa Bay Buccaneers -6.0,41.0 (under),09/22/2024,Denver Broncos,Tampa Bay Buccaneers
+"Carolina Panthers at Las Vegas Raiders - September 22nd, 2024",dome,grass,Las Vegas Raiders -5.5,40.0 (over),09/22/2024,Carolina Panthers,Las Vegas Raiders
+"Miami Dolphins at Seattle Seahawks - September 22nd, 2024",outdoors,fieldturf,Seattle Seahawks -4.5,41.5 (under),09/22/2024,Miami Dolphins,Seattle Seahawks
+"Detroit Lions at Arizona Cardinals - September 22nd, 2024",retractable roof (closed),grass,Detroit Lions -2.5,51.5 (under),09/22/2024,Detroit Lions,Arizona Cardinals
+"Baltimore Ravens at Dallas Cowboys - September 22nd, 2024",retractable roof (closed),matrixturf,Baltimore Ravens -1.0,48.0 (over),09/22/2024,Baltimore Ravens,Dallas Cowboys
+"San Francisco 49ers at Los Angeles Rams - September 22nd, 2024",dome,matrixturf,San Francisco 49ers -6.5,43.5 (over),09/22/2024,San Francisco 49ers,Los Angeles Rams
+"Kansas City Chiefs at Atlanta Falcons - September 22nd, 2024",retractable roof (open),fieldturf,Kansas City Chiefs -3.0,46.5 (under),09/22/2024,Kansas City Chiefs,Atlanta Falcons
+"Jacksonville Jaguars at Buffalo Bills - September 23rd, 2024",outdoors,a_turf,Buffalo Bills -5.5,45.5 (over),09/23/2024,Jacksonville Jaguars,Buffalo Bills
+"Washington Commanders at Cincinnati Bengals - September 23rd, 2024",outdoors,fieldturf,Cincinnati Bengals -7.5,46.5 (over),09/23/2024,Washington Commanders,Cincinnati Bengals
+"Dallas Cowboys at New York Giants - September 26th, 2024",outdoors,fieldturf,Dallas Cowboys -6.0,45.5 (under),09/26/2024,Dallas Cowboys,New York Giants
+"New Orleans Saints at Atlanta Falcons - September 29th, 2024",retractable roof (closed),fieldturf,Atlanta Falcons -2.5,41.0 (over),09/29/2024,New Orleans Saints,Atlanta Falcons
+"Cincinnati Bengals at Carolina Panthers - September 29th, 2024",outdoors,grass,Cincinnati Bengals -4.5,47.0 (over),09/29/2024,Cincinnati Bengals,Carolina Panthers
+"Los Angeles Rams at Chicago Bears - September 29th, 2024",outdoors,grass,Chicago Bears -3.0,40.5 (over),09/29/2024,Los Angeles Rams,Chicago Bears
+"Pittsburgh Steelers at Indianapolis Colts - September 29th, 2024",retractable roof (closed),fieldturf,Pittsburgh Steelers -1.0,40.5 (over),09/29/2024,Pittsburgh Steelers,Indianapolis Colts
+"Minnesota Vikings at Green Bay Packers - September 29th, 2024",outdoors,grass,Green Bay Packers -3.0,44.0 (over),09/29/2024,Minnesota Vikings,Green Bay Packers
+"Jacksonville Jaguars at Houston Texans - September 29th, 2024",retractable roof (closed),astroturf,Houston Texans -5.5,44.5 (under),09/29/2024,Jacksonville Jaguars,Houston Texans
+"Denver Broncos at New York Jets - September 29th, 2024",outdoors,fieldturf,New York Jets -9.0,40.0 (under),09/29/2024,Denver Broncos,New York Jets
+"Philadelphia Eagles at Tampa Bay Buccaneers - September 29th, 2024",outdoors,grass,Philadelphia Eagles -1.0,42.5 (over),09/29/2024,Philadelphia Eagles,Tampa Bay Buccaneers
+"Washington Commanders at Arizona Cardinals - September 29th, 2024",retractable roof (closed),grass,Arizona Cardinals -3.5,48.5 (over),09/29/2024,Washington Commanders,Arizona Cardinals
+"New England Patriots at San Francisco 49ers - September 29th, 2024",outdoors,grass,San Francisco 49ers -10.0,40.5 (over),09/29/2024,New England Patriots,San Francisco 49ers
+"Cleveland Browns at Las Vegas Raiders - September 29th, 2024",dome,grass,Cleveland Browns -2.5,36.5 (under),09/29/2024,Cleveland Browns,Las Vegas Raiders
+"Kansas City Chiefs at Los Angeles Chargers - September 29th, 2024",dome,matrixturf,Kansas City Chiefs -7.0,41.0 (under),09/29/2024,Kansas City Chiefs,Los Angeles Chargers
+"Buffalo Bills at Baltimore Ravens - September 29th, 2024",outdoors,grass,Baltimore Ravens -2.5,46.5 (under),09/29/2024,Buffalo Bills,Baltimore Ravens
+"Tennessee Titans at Miami Dolphins - September 30th, 2024",outdoors,grass,Miami Dolphins -2.5,37.0 (over),09/30/2024,Tennessee Titans,Miami Dolphins
+"Seattle Seahawks at Detroit Lions - September 30th, 2024",dome,fieldturf,Detroit Lions -4.0,47.0 (over),09/30/2024,Seattle Seahawks,Detroit Lions
+"Tampa Bay Buccaneers at Atlanta Falcons - October 3rd, 2024",retractable roof (closed),fieldturf,Atlanta Falcons -1.5,44.0 (over),10/03/2024,Tampa Bay Buccaneers,Atlanta Falcons
+"New York Jets at Minnesota Vikings - October 6th, 2024",outdoors,grass,Minnesota Vikings -2.5,41.0 (under),10/06/2024,New York Jets,Minnesota Vikings
+"Carolina Panthers at Chicago Bears - October 6th, 2024",outdoors,grass,Chicago Bears -4.0,40.5 (over),10/06/2024,Carolina Panthers,Chicago Bears
+"Baltimore Ravens at Cincinnati Bengals - October 6th, 2024",outdoors,fieldturf,Baltimore Ravens -1.0,48.5 (over),10/06/2024,Baltimore Ravens,Cincinnati Bengals
+"Buffalo Bills at Houston Texans - October 6th, 2024",retractable roof (closed),astroturf,Houston Texans -1.0,47.5 (under),10/06/2024,Buffalo Bills,Houston Texans
+"Indianapolis Colts at Jacksonville Jaguars - October 6th, 2024",outdoors,grass,Jacksonville Jaguars -3.0,45.0 (over),10/06/2024,Indianapolis Colts,Jacksonville Jaguars
+"Miami Dolphins at New England Patriots - October 6th, 2024",outdoors,fieldturf,Miami Dolphins -1.0,35.0 (under),10/06/2024,Miami Dolphins,New England Patriots
+"Cleveland Browns at Washington Commanders - October 6th, 2024",outdoors,grass,Washington Commanders -3.0,43.5 (over),10/06/2024,Cleveland Browns,Washington Commanders
+"Las Vegas Raiders at Denver Broncos - October 6th, 2024",outdoors,grass,Denver Broncos -3.0,35.5 (over),10/06/2024,Las Vegas Raiders,Denver Broncos
+"Arizona Cardinals at San Francisco 49ers - October 6th, 2024",outdoors,grass,San Francisco 49ers -7.0,49.0 (under),10/06/2024,Arizona Cardinals,San Francisco 49ers
+"Green Bay Packers at Los Angeles Rams - October 6th, 2024",dome,matrixturf,Green Bay Packers -3.0,48.5 (under),10/06/2024,Green Bay Packers,Los Angeles Rams
+"New York Giants at Seattle Seahawks - October 6th, 2024",outdoors,fieldturf,Seattle Seahawks -7.0,43.0 (over),10/06/2024,New York Giants,Seattle Seahawks
+"Dallas Cowboys at Pittsburgh Steelers - October 6th, 2024",outdoors,grass,Pittsburgh Steelers -2.5,43.5 (under),10/06/2024,Dallas Cowboys,Pittsburgh Steelers
+"New Orleans Saints at Kansas City Chiefs - October 7th, 2024",outdoors,grass,Kansas City Chiefs -5.5,43.0 (under),10/07/2024,New Orleans Saints,Kansas City Chiefs
+"San Francisco 49ers at Seattle Seahawks - October 10th, 2024",outdoors,fieldturf,San Francisco 49ers -3.5,49.0 (over),10/10/2024,San Francisco 49ers,Seattle Seahawks
+"Jacksonville Jaguars at Chicago Bears - October 13th, 2024",outdoors,grass,Jacksonville Jaguars -1.0,45.0 (over),10/13/2024,Jacksonville Jaguars,Chicago Bears
+"Arizona Cardinals at Green Bay Packers - October 13th, 2024",outdoors,grass,Green Bay Packers -5.5,47.0 (push),10/13/2024,Arizona Cardinals,Green Bay Packers
+"Tampa Bay Buccaneers at New Orleans Saints - October 13th, 2024",dome,sportturf,Tampa Bay Buccaneers -3.5,41.5 (over),10/13/2024,Tampa Bay Buccaneers,New Orleans Saints
+"Houston Texans at New England Patriots - October 13th, 2024",outdoors,fieldturf,Houston Texans -7.0,37.5 (over),10/13/2024,Houston Texans,New England Patriots
+"Indianapolis Colts at Tennessee Titans - October 13th, 2024",outdoors,grass,Tennessee Titans -2.5,43.0 (under),10/13/2024,Indianapolis Colts,Tennessee Titans
+"Cleveland Browns at Philadelphia Eagles - October 13th, 2024",outdoors,grass,Philadelphia Eagles -9.5,42.5 (under),10/13/2024,Cleveland Browns,Philadelphia Eagles
+"Washington Commanders at Baltimore Ravens - October 13th, 2024",outdoors,grass,Baltimore Ravens -6.5,51.5 (over),10/13/2024,Washington Commanders,Baltimore Ravens
+"Los Angeles Chargers at Denver Broncos - October 13th, 2024",outdoors,grass,Los Angeles Chargers -3.0,36.0 (over),10/13/2024,Los Angeles Chargers,Denver Broncos
+"Pittsburgh Steelers at Las Vegas Raiders - October 13th, 2024",dome,grass,Pittsburgh Steelers -3.0,36.5 (over),10/13/2024,Pittsburgh Steelers,Las Vegas Raiders
+"Atlanta Falcons at Carolina Panthers - October 13th, 2024",outdoors,grass,Atlanta Falcons -6.5,47.0 (over),10/13/2024,Atlanta Falcons,Carolina Panthers
+"Detroit Lions at Dallas Cowboys - October 13th, 2024",retractable roof (closed),matrixturf,Detroit Lions -3.5,52.5 (over),10/13/2024,Detroit Lions,Dallas Cowboys
+"Cincinnati Bengals at New York Giants - October 13th, 2024",outdoors,fieldturf,Cincinnati Bengals -3.5,46.5 (under),10/13/2024,Cincinnati Bengals,New York Giants
+"Buffalo Bills at New York Jets - October 14th, 2024",outdoors,fieldturf,Buffalo Bills -1.0,40.5 (over),10/14/2024,Buffalo Bills,New York Jets
