@@ -1,11 +1,19 @@
+"""PFF authentication helpers using Selenium."""
+
+import logging
 import os
 import time
-from selenium import webdriver  # Python Dynamic web scraping library
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 
-def login_to_pff():
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+logger = logging.getLogger(__name__)
+
+
+def login_to_pff() -> webdriver.Chrome:
+    """Log into auth.pff.com and return an authenticated Chrome driver."""
     signinurl = "https://auth.pff.com"
     email = os.environ.get("PFF_EMAIL")
     pw = os.environ.get("PFF_PASSWORD")
@@ -25,9 +33,11 @@ def login_to_pff():
 
     return driver
 
-def navigate_and_sign_in(driver, url):
+
+def navigate_and_sign_in(driver: webdriver.Chrome, url: str) -> None:
+    """Navigate to a PFF page and click the sign-in button if prompted."""
     driver.get(url)
-    
+
     # Wait for the "Sign In" button to appear and click it
     try:
         sign_in_button = WebDriverWait(driver, 10).until(
@@ -35,5 +45,5 @@ def navigate_and_sign_in(driver, url):
         )
         sign_in_button.click()
         time.sleep(3)  # Allow time for the sign-in process to complete if necessary
-    except:
-        print("Sign In button not found or not needed for this page.")
+    except Exception as e:
+        logger.info("Sign In button not found or not needed for this page: %s", e)

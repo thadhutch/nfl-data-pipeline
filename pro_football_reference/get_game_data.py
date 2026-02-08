@@ -1,22 +1,23 @@
-from seleniumwire import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+"""Scrape Pro Football Reference boxscores for game data using proxied Selenium."""
+
+import csv
+import logging
 import random
 import time
-import csv
 
-# Path to the boxscores URLs file
-boxscores_file_path = "2024_wk6_urls.txt"
-csv_file_path = "2024_wk6_game_data.csv"
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from seleniumwire import webdriver
 
-# Path to your WebDriver (update this if necessary)
-webdriver_path = "/path/to/chromedriver"
+import config
+
+logger = logging.getLogger(__name__)
 
 
-# Function to read proxies from a CSV file
-def load_proxies_from_csv(file_path):
+def load_proxies_from_csv(file_path: str) -> list:
+    """Read proxy configurations from a CSV file."""
     proxies = []
     with open(file_path, "r") as file:
         reader = csv.reader(file)
@@ -31,17 +32,13 @@ def load_proxies_from_csv(file_path):
     return proxies
 
 
-# Load proxies from the CSV file
-proxies_list = load_proxies_from_csv("proxies/proxies.csv")
-
-
-# Function to get a random proxy from the list
-def get_random_proxy():
+def get_random_proxy(proxies_list: list) -> tuple:
+    """Return a random proxy from the list."""
     return random.choice(proxies_list)
 
 
-# Function to configure WebDriver with proxy
-def configure_driver_with_proxy(proxy_url, proxy_auth):
+def configure_driver_with_proxy(proxy_url: str, proxy_auth: str) -> webdriver.Chrome:
+    """Create a Chrome WebDriver configured with the given proxy."""
     proxy_user, proxy_pass = proxy_auth.split(":")
 
     # Define the proxy options with credentials
@@ -86,8 +83,8 @@ def configure_driver_with_proxy(proxy_url, proxy_auth):
     return driver
 
 
-# Function to auto-scroll the page
-def auto_scroll(driver):
+def auto_scroll(driver) -> None:
+    """Scroll to the bottom of the page to trigger lazy-loaded content."""
     scroll_pause_time = 1  # Time to wait between scrolls in seconds
 
     # Get the initial scroll height
@@ -107,10 +104,10 @@ def auto_scroll(driver):
         last_height = new_height
 
 
-# Function to extract game info and header from a single URL using Selenium and a proxy
-def scrape_game_info(url):
+def scrape_game_info(url: str, proxies_list: list) -> dict | None:
+    """Extract game info and header from a single boxscore URL."""
     full_url = f"{url}"  # Use the URL as is without a base URL
-    proxy_url, proxy_auth = get_random_proxy()  # Get a random proxy
+    proxy_url, proxy_auth = get_random_proxy(proxies_list)
 
     driver = None
     try:
@@ -152,15 +149,14 @@ def scrape_game_info(url):
                 info_key = row.find_element(By.TAG_NAME, "th").text.strip()  # Get the key
                 info_value = row.find_element(By.TAG_NAME, "td").text.strip()  # Get the value
 
-                # Print the key-value pair for debugging
-                print(f"Key: {info_key}, Value: {info_value}")
+                logger.debug("Key: %s, Value: %s", info_key, info_value)
 
                 # Only store the data if it's one of the required rows
                 if info_key in required_rows:
                     game_info[info_key] = info_value
 
             except Exception as e:
-                print(f"Error extracting data from row: {e}")  # Continue on error
+                logger.debug("Error extracting data from row: %s", e)
 
         # Return the extracted game info
         return {
@@ -172,7 +168,7 @@ def scrape_game_info(url):
         }
 
     except Exception as e:
-        print(f"Error fetching {full_url} with proxy {proxy_url}: {e}")
+        logger.error("Error fetching %s with proxy %s: %s", full_url, proxy_url, e)
         return None
 
     finally:
@@ -180,41 +176,40 @@ def scrape_game_info(url):
             driver.quit()  # Make sure to close the browser session
 
 
-# New global variable to store failed URLs
-failed_urls = []
-
-
-# Modified scrape_all_game_info function with retry logic
 def scrape_all_game_info():
+    """Scrape all boxscore URLs with retry logic and proxy rotation."""
+    proxies_list = load_proxies_from_csv(str(config.PROXY_FILE))
+
     # Load all boxscores URLs
-    with open(boxscores_file_path, "r") as f:
+    with open(config.PFR_BOXSCORES_FILE, "r") as f:
         boxscores_urls = [line.strip() for line in f.readlines()]
 
     # List to store all game data
     all_game_data = []
+    failed_urls = []
     max_retries = 5
 
     for url in boxscores_urls:
-        print(f"Scraping URL: {url}")
+        logger.info("Scraping URL: %s", url)
         success = False
         retry_count = 0
 
         while not success and retry_count < max_retries:
             try:
-                game_data = scrape_game_info(url)
+                game_data = scrape_game_info(url, proxies_list)
                 if game_data:
                     all_game_data.append(game_data)
                     success = True
             except Exception as e:
-                print(f"Error scraping {url}: {e}")
+                logger.error("Error scraping %s: %s", url, e)
                 retry_count += 1
 
             if not success:
                 failed_urls.append(url)
             time.sleep(1)  # Add a small delay to avoid overwhelming the server
-            
+
         # Save the results to a CSV file
-        with open(csv_file_path, "w", newline="", encoding="utf-8") as csvfile:
+        with open(config.PFR_GAME_DATA_FILE, "w", newline="", encoding="utf-8") as csvfile:
             fieldnames = ["Title", "Roof", "Surface", "Vegas Line", "Over/Under"]
             writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 
@@ -235,11 +230,10 @@ def scrape_all_game_info():
         with open("failed_urls.txt", "w") as f:
             f.write("\n".join(failed_urls))
 
-    print(f"Scraped data saved")
+    logger.info("Scraped data saved")
     if failed_urls:
-        print(f"Failed URLs saved to failed_urls.txt")
+        logger.warning("Failed URLs saved to failed_urls.txt")
 
 
-# Run the main function
 if __name__ == "__main__":
     scrape_all_game_info()

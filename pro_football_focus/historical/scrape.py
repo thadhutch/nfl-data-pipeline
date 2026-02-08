@@ -1,17 +1,24 @@
+"""Scrape PFF team grades from premium.pff.com."""
+
+import logging
 import os
 import sys
+import time
+
+import pandas as pd
+from selenium import webdriver
 
 # Add the parent directory to sys.path
 parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 if parent_dir not in sys.path:
     sys.path.append(parent_dir)
 
-import time
-import pandas as pd
-from selenium import webdriver
 from utils.authenticate import login_to_pff, navigate_and_sign_in
 from teams import url_teams, encoded_teams, url_decoded_teams
 
+import config
+
+logger = logging.getLogger(__name__)
 
 """
 
@@ -25,20 +32,16 @@ NAME DISCREPENCIES
 # San Diego Chargers moved in 2017 to Los Angeles
 """
 
-output_path = "new_2024_team_data.csv"
 
-
-def scrape_pff_data():
+def scrape_pff_data() -> None:
+    """Scrape PFF team schedule data for all teams across configured seasons."""
     driver = login_to_pff()
 
     time.sleep(5)
 
     games_dict = {}
 
-    # This variable can be modified to include whichever seasons you prefer
-    seasons = ["2024"]
-
-    for szn in seasons:
+    for szn in config.SEASONS:
         for url_team in url_teams:
 
             if url_team == "washington-commanders":
@@ -121,7 +124,8 @@ def scrape_pff_data():
                         "xpath",
                         f'//*[@id="react-root"]/div/div[2]/div/div/div[3]/div/div/div[2]/div/div[1]/div/div[1]/div/div[{row}]/div[2]',
                     ).text
-                except:
+                except Exception as e:
+                    logger.debug("Row %d not found, skipping: %s", row, e)
                     continue
 
                 is_empty = driver.find_element(
@@ -197,9 +201,11 @@ def scrape_pff_data():
                             else:
                                 games_dict[game_id][home_stats[stat]] = current_cell
 
-                    except:
+                    except Exception as e:
+                        logger.debug("Error scraping stat %d in row %d: %s", stat, row, e)
                         continue
 
     df = pd.DataFrame(games_dict)
     df = df.T
-    df.to_csv(output_path)
+    df.to_csv(config.PFF_RAW_FILE)
+    logger.info("PFF data saved to %s", config.PFF_RAW_FILE)
