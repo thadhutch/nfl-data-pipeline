@@ -20,10 +20,24 @@ def _parse_spread(vegas_line: str) -> float:
     return abs(float(vegas_line.rsplit(" ", 1)[-1]))
 
 
+# Map historical franchise names to their current name so stats consolidate
+_FRANCHISE_RENAMES: dict[str, str] = {
+    "Oakland Raiders": "Las Vegas Raiders",
+    "San Diego Chargers": "Los Angeles Chargers",
+    "St. Louis Rams": "Los Angeles Rams",
+    "Washington Redskins": "Washington Commanders",
+    "Washington Football Team": "Washington Commanders",
+}
+
+
 def _load_underdog_data() -> pd.DataFrame:
     """Load game data and compute underdog / winner columns."""
     df = pd.read_csv(config.OVERUNDER_RANKED)
     logger.info("Loaded %d games from %s", len(df), config.OVERUNDER_RANKED)
+
+    # Consolidate relocated/renamed franchises
+    df["home_team"] = df["home_team"].replace(_FRANCHISE_RENAMES)
+    df["away_team"] = df["away_team"].replace(_FRANCHISE_RENAMES)
 
     df["spread"] = df["Vegas Line"].apply(_parse_spread)
     df["favorite_team"] = df["Vegas Line"].apply(
@@ -122,7 +136,7 @@ def _render_chart(
 
     for i, (_, row) in enumerate(stats.iterrows()):
         try:
-            logo = get_logo_image(row["underdog"], zoom=0.06)
+            logo = get_logo_image(row["underdog"])
             ab = AnnotationBbox(
                 logo,
                 (-0.5, i),

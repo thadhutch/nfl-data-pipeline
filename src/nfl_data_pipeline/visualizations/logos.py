@@ -6,6 +6,7 @@ from pathlib import Path
 
 from matplotlib.image import imread
 from matplotlib.offsetbox import OffsetImage
+from PIL import Image
 
 from nfl_data_pipeline import _config as config
 
@@ -68,8 +69,16 @@ def get_logo_path(team_name: str) -> Path:
     return path
 
 
-def get_logo_image(team_name: str, zoom: float = 0.06) -> OffsetImage:
-    """Return a matplotlib OffsetImage of the team logo for chart annotations."""
+_LOGO_TARGET_PX = 30  # target height in pixels for chart logos
+
+
+def get_logo_image(team_name: str) -> OffsetImage:
+    """Return a matplotlib OffsetImage of the team logo, normalized to a fixed height."""
     path = get_logo_path(team_name)
-    img = imread(str(path))
-    return OffsetImage(img, zoom=zoom)
+    img = Image.open(path)
+    # Resize so height == _LOGO_TARGET_PX, preserving aspect ratio
+    w, h = img.size
+    new_h = _LOGO_TARGET_PX
+    new_w = int(w * new_h / h)
+    img = img.resize((new_w, new_h), Image.LANCZOS)
+    return OffsetImage(img, zoom=1.0)
