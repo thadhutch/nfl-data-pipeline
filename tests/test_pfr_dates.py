@@ -1,4 +1,4 @@
-from utils.pfr.normalize_date import extract_date
+from nfl_data_pipeline.parsers.pfr_dates import extract_date
 
 
 def test_standard_pfr_title_format():

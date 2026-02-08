@@ -1,4 +1,4 @@
-from utils.pff.normalize_team_names import map_teams
+from nfl_data_pipeline.parsers.pff_teams import map_teams
 
 
 def test_known_abbreviation_pair():
