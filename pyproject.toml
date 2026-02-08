@@ -5,8 +5,8 @@ description = "NFL data pipeline combining PFF grades and PFR game data for over
 authors = ["Thad Hutcheson <thadhutch@gmail.com>"]
 readme = "README.md"
 license = "MIT"
-homepage = "https://github.com/thadhutcheson/nfl-data-pipeline"
-repository = "https://github.com/thadhutcheson/nfl-data-pipeline"
+homepage = "https://github.com/thadhutch/nfl-data-pipeline"
+repository = "https://github.com/thadhutch/nfl-data-pipeline"
 keywords = ["nfl", "football", "data-pipeline", "pff", "sports-analytics"]
 classifiers = [
     "Development Status :: 4 - Beta",
