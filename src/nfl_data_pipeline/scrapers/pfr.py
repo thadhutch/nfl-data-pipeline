@@ -11,25 +11,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from seleniumwire import webdriver
 
-import config
+from nfl_data_pipeline import _config as config
+from nfl_data_pipeline.scrapers.proxies import load_proxies_from_csv
 
 logger = logging.getLogger(__name__)
-
-
-def load_proxies_from_csv(file_path: str) -> list:
-    """Read proxy configurations from a CSV file."""
-    proxies = []
-    with open(file_path, "r") as file:
-        reader = csv.reader(file)
-        for row in reader:
-            # Each row is a single string like 'proxy_address:port:user:password'
-            proxy_parts = row[0].split(":")
-            if len(proxy_parts) == 4:
-                address, port, user, password = proxy_parts
-                proxy_url = f"{address}:{port}"
-                proxy_auth = f"{user}:{password}"
-                proxies.append((proxy_url, proxy_auth))
-    return proxies
 
 
 def get_random_proxy(proxies_list: list) -> tuple:
@@ -178,7 +163,7 @@ def scrape_game_info(url: str, proxies_list: list) -> dict | None:
 
 def scrape_all_game_info():
     """Scrape all boxscore URLs with retry logic and proxy rotation."""
-    proxies_list = load_proxies_from_csv(str(config.PROXY_FILE))
+    proxies_list = load_proxies_from_csv(str(config.PROXY_FILE), format="selenium")
 
     # Load all boxscores URLs
     with open(config.PFR_BOXSCORES_FILE, "r") as f:

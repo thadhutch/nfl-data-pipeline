@@ -4,12 +4,12 @@ import logging
 
 import pandas as pd
 
-import config
+from nfl_data_pipeline import _config as config
 
 logger = logging.getLogger(__name__)
 
 
-def main():
+def add_games_played():
     # Read the CSV file
     df = pd.read_csv(config.OVERUNDER_AVERAGES)
 
@@ -71,4 +71,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    add_games_played()

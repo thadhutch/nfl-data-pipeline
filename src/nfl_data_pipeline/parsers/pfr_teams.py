@@ -4,7 +4,7 @@ import logging
 
 import pandas as pd
 
-import config
+from nfl_data_pipeline import _config as config
 
 logger = logging.getLogger(__name__)
 
@@ -18,7 +18,7 @@ def extract_teams(title: str) -> tuple:
     return away_team, home_team
 
 
-def main():
+def extract_pfr_teams():
     # Load the CSV file into a DataFrame
     df = pd.read_csv(config.PFR_NORMALIZED_FILE)
 
@@ -33,4 +33,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    extract_pfr_teams()

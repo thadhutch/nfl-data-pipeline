@@ -1,6 +1,5 @@
 """Gather NFL boxscore URLs from Pro Football Reference."""
 
-import csv
 import logging
 import random
 import time
@@ -8,30 +7,13 @@ import time
 import requests
 from bs4 import BeautifulSoup
 
-import config
+from nfl_data_pipeline import _config as config
+from nfl_data_pipeline.scrapers.proxies import load_proxies_from_csv
 
 logger = logging.getLogger(__name__)
 
 # Base URL structure
 base_url = "https://www.pro-football-reference.com/years/{}/week_{}.htm"
-
-
-def load_proxies_from_csv(file_path: str) -> list:
-    """Read proxy configurations from a CSV file."""
-    proxies = []
-    with open(file_path, 'r') as file:
-        reader = csv.reader(file)
-        for row in reader:
-            # Each row is a single string like 'proxy_address:port:user:password'
-            proxy_parts = row[0].split(':')
-            if len(proxy_parts) == 4:
-                address, port, user, password = proxy_parts
-                proxy_url = f"http://{user}:{password}@{address}:{port}"
-                proxies.append({
-                    'http': proxy_url,
-                    'https': proxy_url
-                })
-    return proxies
 
 
 def get_random_proxy(proxies_list: list) -> dict:
@@ -70,8 +52,8 @@ def get_boxscores(year: int, week: int, proxies_list: list) -> list:
         return []
 
 
-def main():
-    proxies_list = load_proxies_from_csv(str(config.PROXY_FILE))
+def collect_boxscore_urls():
+    proxies_list = load_proxies_from_csv(str(config.PROXY_FILE), format="requests")
 
     # Main loop to gather boxscores
     all_boxscores = []
@@ -96,4 +78,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    collect_boxscore_urls()

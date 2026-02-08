@@ -4,7 +4,7 @@ import logging
 
 import pandas as pd
 
-import config
+from nfl_data_pipeline import _config as config
 
 logger = logging.getLogger(__name__)
 
@@ -27,7 +27,7 @@ def extract_ou_line(over_under: str) -> float | None:
         return None  # Return None if conversion fails
 
 
-def main():
+def process_over_under():
     # Load the dataset
     df = pd.read_csv(config.MERGED_FILE)
 
@@ -51,4 +51,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    process_over_under()

@@ -1,18 +1,11 @@
 """Normalize PFF team abbreviations to full names."""
 
 import logging
-import os
-import sys
 
 import pandas as pd
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.abspath(os.path.join(current_dir, '../../'))
-sys.path.insert(0, parent_dir)
-
-from pro_football_focus.teams import encoded_teams
-
-import config
+from nfl_data_pipeline.teams import encoded_teams
+from nfl_data_pipeline import _config as config
 
 logger = logging.getLogger(__name__)
 
@@ -30,7 +23,7 @@ def map_teams(game_string: str) -> tuple:
     return team_0, team_1
 
 
-def main():
+def normalize_pff_teams():
     # Load the dataset
     df = pd.read_csv(config.PFF_DATES_FILE)
 
@@ -45,4 +38,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    normalize_pff_teams()

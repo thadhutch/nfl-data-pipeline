@@ -10,11 +10,12 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
 )
 
-PROJECT_ROOT = Path(__file__).parent
-DATA_DIR = PROJECT_ROOT / "data"
+DATA_DIR = Path(os.environ.get("NFL_DATA_DIR", "data"))
 PFF_DATA_DIR = DATA_DIR / "pff"
 PFR_DATA_DIR = DATA_DIR / "pfr"
 OVERUNDER_DATA_DIR = DATA_DIR / "over-under"
+
+PROXY_FILE = Path(os.environ.get("NFL_PROXY_FILE", "proxies/proxies.csv"))
 
 SEASONS = os.environ.get("NFL_SEASONS", "2024").split(",")
 START_YEAR = int(os.environ.get("NFL_START_YEAR", "2024"))
@@ -34,4 +35,3 @@ OVERUNDER_RAW = OVERUNDER_DATA_DIR / "raw-dataset.csv"
 OVERUNDER_AVERAGES = OVERUNDER_DATA_DIR / "data-w-averages.csv"
 OVERUNDER_GP = OVERUNDER_DATA_DIR / "v1-dataset-gp.csv"
 OVERUNDER_RANKED = OVERUNDER_DATA_DIR / "v1-dataset-gp-ranked.csv"
-PROXY_FILE = PROJECT_ROOT / "proxies" / "proxies.csv"

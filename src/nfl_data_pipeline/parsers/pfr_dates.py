@@ -5,7 +5,7 @@ import logging
 import pandas as pd
 from dateutil.parser import parse
 
-import config
+from nfl_data_pipeline import _config as config
 
 logger = logging.getLogger(__name__)
 
@@ -19,7 +19,7 @@ def extract_date(title: str) -> str:
     return parsed_date
 
 
-def main():
+def normalize_pfr_dates():
     # Load the CSV file into a DataFrame
     df = pd.read_csv(config.PFR_GAME_DATA_FILE)
 
@@ -33,4 +33,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    normalize_pfr_dates()

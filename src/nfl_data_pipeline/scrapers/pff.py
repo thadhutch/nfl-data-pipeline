@@ -1,22 +1,14 @@
 """Scrape PFF team grades from premium.pff.com."""
 
 import logging
-import os
-import sys
 import time
 
 import pandas as pd
 from selenium import webdriver
 
-# Add the parent directory to sys.path
-parent_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-if parent_dir not in sys.path:
-    sys.path.append(parent_dir)
-
-from utils.authenticate import login_to_pff, navigate_and_sign_in
-from teams import url_teams, encoded_teams, url_decoded_teams
-
-import config
+from nfl_data_pipeline.scrapers.auth import login_to_pff, navigate_and_sign_in
+from nfl_data_pipeline.teams import url_teams, encoded_teams, url_decoded_teams
+from nfl_data_pipeline import _config as config
 
 logger = logging.getLogger(__name__)
 

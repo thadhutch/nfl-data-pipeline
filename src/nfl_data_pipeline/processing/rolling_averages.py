@@ -4,7 +4,7 @@ import logging
 
 import pandas as pd
 
-import config
+from nfl_data_pipeline import _config as config
 
 logger = logging.getLogger(__name__)
 
@@ -37,7 +37,7 @@ def calculate_avg_stats(cumulative_stats: dict, game_count: int) -> dict:
         return {stat: 0.0 for stat in cumulative_stats}
 
 
-def main():
+def compute_rolling_averages():
     # Read the CSV file into a DataFrame
     df = pd.read_csv(config.OVERUNDER_RAW)
 
@@ -142,4 +142,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    compute_rolling_averages()

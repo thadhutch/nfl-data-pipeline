@@ -5,12 +5,12 @@ import logging
 import numpy as np
 import pandas as pd
 
-import config
+from nfl_data_pipeline import _config as config
 
 logger = logging.getLogger(__name__)
 
 
-def main():
+def compute_rankings():
     # Read the CSV file
     df = pd.read_csv(config.OVERUNDER_GP)
 
@@ -114,4 +114,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    compute_rankings()

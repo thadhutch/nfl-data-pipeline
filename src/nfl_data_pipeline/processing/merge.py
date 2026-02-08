@@ -4,12 +4,12 @@ import logging
 
 import pandas as pd
 
-import config
+from nfl_data_pipeline import _config as config
 
 logger = logging.getLogger(__name__)
 
 
-def main():
+def merge_datasets():
     # Load the first CSV with game details
     df1 = pd.read_csv(config.PFR_FINAL_FILE)
 
@@ -36,4 +36,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    merge_datasets()

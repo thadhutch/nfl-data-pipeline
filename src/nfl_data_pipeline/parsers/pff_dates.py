@@ -5,7 +5,7 @@ import logging
 import pandas as pd
 from dateutil.parser import parse
 
-import config
+from nfl_data_pipeline import _config as config
 
 logger = logging.getLogger(__name__)
 
@@ -29,7 +29,7 @@ def extract_date_and_season(game_str: str) -> tuple:
     return None, None
 
 
-def main():
+def extract_dates():
     # Load the CSV data into a pandas DataFrame
     data = pd.read_csv(config.PFF_DATES_FILE)
 
@@ -46,4 +46,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    extract_dates()
