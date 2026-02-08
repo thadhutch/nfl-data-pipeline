@@ -214,14 +214,10 @@ def generate_dogs_that_bite_chart():
     df = df[df["spread"] >= 7].copy()
     stats = _build_team_stats(df)
 
-    seasons = df["season"].dropna().unique()
-    min_s, max_s = int(min(seasons)), int(max(seasons))
-    season_label = f"{min_s}\u2013{max_s}" if min_s != max_s else str(min_s)
-
     _render_chart(
         stats,
         title="Dogs That Bite: Best Teams at 7+ Point Underdogs",
-        subtitle=f"Regular season {season_label} \u00b7 {int(stats['games'].sum()):,} games as 7+ pt underdog",
+        subtitle=f"Regular season 2015\u20132025 \u00b7 {int(stats['games'].sum()):,} games as 7+ pt underdog",
         output_path=config.DOGS_THAT_BITE_CHART,
     )
 
