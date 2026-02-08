@@ -1,0 +1,9 @@
+.venv/
+.git/
+__pycache__/
+*.egg-info/
+dist/
+.pytest_cache/
+data/
+poetry.lock
+.env
