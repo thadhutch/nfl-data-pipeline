@@ -1,57 +1,44 @@
-PYTHON = python
+CLI = poetry run nfl-pipeline
 
-.PHONY: dirs scrape-pff pff-dates pff-names pff scrape-pfr-urls scrape-pfr-games pfr-dates pfr-names pfr merge over-under averages games-played rankings all clean
+.PHONY: dirs pff pfr merge over-under averages games-played rankings all pipeline test clean
 
 dirs:
 	mkdir -p data/pff data/pfr data/over-under
 
 # --- PFF Pipeline ---
 
-scrape-pff: dirs
-	$(PYTHON) pro_football_focus/historical/main.py
-
-pff-dates: scrape-pff
-	$(PYTHON) utils/pff/extract_dates.py
-
-pff-names: pff-dates
-	$(PYTHON) utils/pff/normalize_team_names.py
-
-pff: pff-names
+pff: dirs
+	$(CLI) scrape pff
 
 # --- PFR Pipeline ---
 
-scrape-pfr-urls: dirs
-	$(PYTHON) pro_football_reference/get_regular_season_urls.py
-
-scrape-pfr-games: scrape-pfr-urls
-	$(PYTHON) pro_football_reference/get_game_data.py
-
-pfr-dates: scrape-pfr-games
-	$(PYTHON) utils/pfr/normalize_date.py
-
-pfr-names: pfr-dates
-	$(PYTHON) utils/pfr/normalize_team_names.py
-
-pfr: pfr-names
+pfr: dirs
+	$(CLI) scrape pfr
 
 # --- Merge + Postprocessing ---
 
 merge: pff pfr
-	$(PYTHON) utils/merge_pff_and_pfr.py
+	$(CLI) process merge
 
 over-under: merge
-	$(PYTHON) postprocessing/over_under.py
+	$(CLI) process over-under
 
 averages: over-under
-	$(PYTHON) postprocessing/prep_pff_data.py
+	$(CLI) process averages
 
 games-played: averages
-	$(PYTHON) postprocessing/games_played.py
+	$(CLI) process games-played
 
 rankings: games-played
-	$(PYTHON) postprocessing/rank.py
+	$(CLI) process rankings
 
 all: rankings
+
+pipeline: dirs
+	$(CLI) pipeline
+
+test:
+	poetry run pytest -v
 
 clean:
 	rm -rf data/pff/* data/pfr/* data/over-under/*

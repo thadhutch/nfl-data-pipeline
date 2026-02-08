@@ -8,3 +8,5 @@ data/
 !pyproject.toml
 *.txt
 !requirements.txt
+dist/
+*.egg-info/
