@@ -7,6 +7,10 @@
 
 An end-to-end data pipeline that combines [PFF](https://www.pff.com/) team grades with [Pro Football Reference](https://www.pro-football-reference.com/) game and betting data, then produces analysis-ready datasets with rolling averages, rankings, and over/under features.
 
+<p align="center">
+  <img src="docs/dogs_that_bite.png" alt="Dogs That Bite: Best Teams at 7+ Point Underdogs" width="600">
+</p>
+
 ---
 
 ## Table of Contents
