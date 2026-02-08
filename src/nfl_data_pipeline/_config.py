@@ -17,9 +17,9 @@ OVERUNDER_DATA_DIR = DATA_DIR / "over-under"
 
 PROXY_FILE = Path(os.environ.get("NFL_PROXY_FILE", "proxies/proxies.csv"))
 
-SEASONS = os.environ.get("NFL_SEASONS", "2024").split(",")
-START_YEAR = int(os.environ.get("NFL_START_YEAR", "2024"))
-END_YEAR = int(os.environ.get("NFL_END_YEAR", "2024"))
+SEASONS = os.environ.get("NFL_SEASONS", "2025").split(",")
+START_YEAR = int(os.environ.get("NFL_START_YEAR", "2025"))
+END_YEAR = int(os.environ.get("NFL_END_YEAR", "2025"))
 MAX_WEEK = int(os.environ.get("NFL_MAX_WEEK", "18"))
 
 # All file paths used by the pipeline

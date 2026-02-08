@@ -74,9 +74,9 @@ cp .env.example .env
 
 | Variable | Default | Description |
 |---|---|---|
-| `NFL_SEASONS` | `2024` | Comma-separated seasons to scrape from PFF |
-| `NFL_START_YEAR` | `2024` | First year for PFR boxscore URL collection |
-| `NFL_END_YEAR` | `2024` | Last year for PFR boxscore URL collection |
+| `NFL_SEASONS` | `2025` | Comma-separated seasons to scrape from PFF |
+| `NFL_START_YEAR` | `2025` | First year for PFR boxscore URL collection |
+| `NFL_END_YEAR` | `2025` | Last year for PFR boxscore URL collection |
 | `NFL_MAX_WEEK` | `18` | Final week to scrape in the last season |
 | `NFL_DATA_DIR` | `data` | Base directory for all output files |
 | `NFL_PROXY_FILE` | `proxies/proxies.csv` | Path to proxy list (`address:port:user:password` per line) |
