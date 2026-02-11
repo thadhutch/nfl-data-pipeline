@@ -1,5 +1,5 @@
 """sports-quant -- NFL data pipeline combining PFF grades and PFR game data."""
-__version__ = "1.1.1"
+__version__ = "2.0.0"
 
 from sports_quant.scrapers.pff import scrape_pff_data
 from sports_quant.scrapers.pfr_urls import collect_boxscore_urls
