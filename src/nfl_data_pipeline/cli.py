@@ -124,6 +124,97 @@ def feature_importance():
     generate_feature_importance()
 
 
+@chart.command(name="pff-vs-vegas-spread")
+def pff_vs_vegas_spread():
+    """Generate PFF grade differential vs Vegas spread scatter plot."""
+    from nfl_data_pipeline.visualizations.pff_vs_vegas_spread import generate_pff_vs_vegas_spread
+    generate_pff_vs_vegas_spread()
+
+
+@chart.command(name="ou-line-vs-actual")
+def ou_line_vs_actual():
+    """Generate O/U line vs actual total score scatter plot."""
+    from nfl_data_pipeline.visualizations.ou_line_vs_actual import generate_ou_line_vs_actual
+    generate_ou_line_vs_actual()
+
+
+@chart.command(name="team-ranking-heatmap")
+def team_ranking_heatmap():
+    """Generate team ranking heatmap across PFF grade categories."""
+    from nfl_data_pipeline.visualizations.team_ranking_heatmap import generate_team_ranking_heatmap
+    generate_team_ranking_heatmap()
+
+
+@chart.command(name="vegas-line-accuracy")
+def vegas_line_accuracy():
+    """Generate Vegas spread accuracy histogram."""
+    from nfl_data_pipeline.visualizations.vegas_line_accuracy import generate_vegas_line_accuracy
+    generate_vegas_line_accuracy()
+
+
+@chart.command(name="vegas-accuracy-conditions")
+def vegas_accuracy_conditions():
+    """Generate Vegas spread accuracy box plots by surface/roof type."""
+    from nfl_data_pipeline.visualizations.vegas_accuracy_by_conditions import generate_vegas_accuracy_by_conditions
+    generate_vegas_accuracy_by_conditions()
+
+
+@chart.command(name="team-trajectory")
+def team_trajectory():
+    """Generate team performance trajectory line chart."""
+    from nfl_data_pipeline.visualizations.team_performance_trajectory import generate_team_performance_trajectory
+    generate_team_performance_trajectory()
+
+
+@chart.command(name="ou-accuracy-by-range")
+def ou_accuracy_by_range():
+    """Generate O/U accuracy by line range bar chart."""
+    from nfl_data_pipeline.visualizations.ou_accuracy_by_line_range import generate_ou_accuracy_by_line_range
+    generate_ou_accuracy_by_line_range()
+
+
+@chart.command(name="off-vs-def-correlation")
+def off_vs_def_correlation():
+    """Generate offensive vs defensive PFF grade correlation scatter plot."""
+    from nfl_data_pipeline.visualizations.off_vs_def_correlation import generate_off_vs_def_correlation
+    generate_off_vs_def_correlation()
+
+
+@chart.command(name="team-radar")
+def team_radar():
+    """Generate team PFF grade radar/spider chart."""
+    from nfl_data_pipeline.visualizations.team_radar_chart import generate_team_radar_chart
+    generate_team_radar_chart()
+
+
+@chart.command(name="wins-vs-pff-grade")
+def wins_vs_pff_grade():
+    """Generate win percentage vs composite PFF grade scatter plot."""
+    from nfl_data_pipeline.visualizations.wins_vs_pff_grade import generate_wins_vs_pff_grade
+    generate_wins_vs_pff_grade()
+
+
+@chart.command(name="grade-differential-upsets")
+def grade_differential_upsets():
+    """Generate biggest PFF grade-differential upsets bar chart."""
+    from nfl_data_pipeline.visualizations.grade_differential_upsets import generate_grade_differential_upsets
+    generate_grade_differential_upsets()
+
+
+@chart.command(name="early-vs-late-grades")
+def early_vs_late_grades():
+    """Generate early vs late season PFF grade comparison chart."""
+    from nfl_data_pipeline.visualizations.early_vs_late_grades import generate_early_vs_late_grades
+    generate_early_vs_late_grades()
+
+
+@chart.command(name="grade-stability")
+def grade_stability():
+    """Generate PFF grade stability by games played line chart."""
+    from nfl_data_pipeline.visualizations.grade_stability import generate_grade_stability
+    generate_grade_stability()
+
+
 @cli.group()
 def model():
     """Train and evaluate O/U prediction models."""
