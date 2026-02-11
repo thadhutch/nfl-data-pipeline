@@ -90,8 +90,9 @@ def predict_with_consensus(
     Returns a DataFrame of consensus picks or ``None`` if no consensus.
     """
     from nfl_data_pipeline.modeling._data import DATE_COLUMN, TARGET_COLUMN
+    from nfl_data_pipeline.modeling._features import ALL_FEATURES
 
-    X_test = test_df.drop(columns=[TARGET_COLUMN, DATE_COLUMN], errors="ignore")
+    X_test = test_df[ALL_FEATURES]
     y_test = test_df[TARGET_COLUMN]
     seasons_test = test_df["season"].values
 

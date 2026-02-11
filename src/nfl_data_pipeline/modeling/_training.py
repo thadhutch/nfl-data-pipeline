@@ -12,6 +12,7 @@ from sklearn.model_selection import train_test_split
 from xgboost import XGBClassifier
 
 from nfl_data_pipeline.modeling._data import DATE_COLUMN, TARGET_COLUMN
+from nfl_data_pipeline.modeling._features import ALL_FEATURES
 
 logger = logging.getLogger(__name__)
 
@@ -81,12 +82,10 @@ def train_ensemble_for_date(
         )
         return []
 
-    X_test = test_df.drop(columns=[TARGET_COLUMN, DATE_COLUMN], errors="ignore")
+    X_test = test_df[ALL_FEATURES]
     y_test = test_df[TARGET_COLUMN]
 
-    X_full = train_df.drop(
-        columns=[TARGET_COLUMN, DATE_COLUMN], errors="ignore"
-    ).reset_index(drop=True)
+    X_full = train_df[ALL_FEATURES].reset_index(drop=True)
     y_full = train_df[TARGET_COLUMN].reset_index(drop=True)
     seasons_full = train_df["season"].reset_index(drop=True)
 
@@ -221,9 +220,7 @@ def train_backtest_model_for_date(
     if len(train_seasons) < 2:
         return None
 
-    X_train_full = train_df.drop(
-        columns=[TARGET_COLUMN, DATE_COLUMN], errors="ignore"
-    )
+    X_train_full = train_df[ALL_FEATURES]
     y_train_full = train_df[TARGET_COLUMN]
 
     try:
@@ -238,7 +235,7 @@ def train_backtest_model_for_date(
         logger.error("train_test_split failed (backtest model %d): %s", model_idx + 1, exc)
         return None
 
-    X_test = test_df.drop(columns=[TARGET_COLUMN, DATE_COLUMN], errors="ignore")
+    X_test = test_df[ALL_FEATURES]
     y_test = test_df[TARGET_COLUMN]
 
     if X_train.empty or X_test.empty:
